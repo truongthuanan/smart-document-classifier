@@ -1,0 +1,52 @@
+# requirements.txt
+# Dependencies cho Project 1: Smart Document Classifier
+# Tech Stack: Hugging Face + Open Source
+
+# ===== Core Python Libraries =====
+python-magic-bin==0.4.14  # Detect file types (Windows compatible)
+
+# ===== Module 2: Text Extraction =====
+PyPDF2==3.0.1              # PDF extraction
+python-docx==1.1.0         # DOCX extraction
+pytesseract==0.3.10        # OCR for images
+Pillow==10.2.0             # Image processing
+pdfplumber==0.10.3         # Better PDF extraction (alternative)
+
+# ===== Module 3: Document Classification (Hugging Face) =====
+transformers==4.36.0       # Hugging Face Transformers library
+torch==2.1.2               # PyTorch (backend for transformers)
+# OR use tensorflow instead:
+# tensorflow==2.15.0
+
+# ===== Module 4: Entity Extraction (Hugging Face) =====
+# Uses transformers library above
+
+# ===== Module 5: PII Detection =====
+presidio-analyzer==2.2.33  # Open-source PII detection
+presidio-anonymizer==2.2.33
+
+# ===== Traditional ML (Fallback) =====
+scikit-learn==1.4.0        # Naive Bayes fallback
+numpy==1.26.3              # Numerical operations
+pandas==2.1.4              # Data manipulation
+
+# ===== API Layer (Module 7) =====
+fastapi==0.109.0
+uvicorn==0.27.0
+python-multipart==0.0.6    # File upload support
+
+# ===== UI Layer (Module 8) =====
+streamlit==1.30.0
+
+# ===== Utilities =====
+python-dotenv==1.0.0       # Load .env files
+tqdm==4.66.1               # Progress bars
+
+# ===== Optional: Model optimization =====
+# optimum==1.16.0          # Optimize HF models
+# onnxruntime==1.16.3      # Fast inference
+
+# Note: 
+# - Uncomment torch OR tensorflow (not both)
+# - Total size: ~2GB (mostly PyTorch + models)
+# - Models auto-download from HuggingFace Hub when first run
